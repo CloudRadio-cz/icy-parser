@@ -1,7 +1,7 @@
 import { concat, parseMetadata } from "../utils/helpers"
 
 /**
- * Metadata returned from an ICY stream.
+ * Metadata returned from an Icy stream.
  */
 export interface IcyMetadata {
   /** The raw metadata string from the stream */
@@ -23,9 +23,9 @@ export interface IcyMetadata {
 }
 
 /**
- * Parser for ICY (SHOUTcast/Icecast) stream metadata.
+ * Parser for Icy (SHOUTcast/Icecast) stream metadata.
  *
- * ICY streams embed metadata (like the current song title) inline within the audio data.
+ * Icy streams embed metadata (like the current song title) inline within the audio data.
  * This class handles connecting to a stream and extracting that metadata.
  *
  * @example
@@ -59,7 +59,7 @@ export class IcyParser {
    *
    * @returns A promise that resolves to the parsed metadata
    *
-   * @throws {Error} "Stream does not support ICY metadata" - if the stream doesn't have the `icy-metaint` header
+   * @throws {Error} "Stream does not support Icy metadata" - if the stream doesn't have the `icy-metaint` header
    * @throws {Error} "Stream ended before metadata was received" - if the stream closes before metadata is found
    * @throws {Error} "Failed to read metadata from stream" - if the metadata chunk couldn't be read
    *
@@ -79,7 +79,7 @@ export class IcyParser {
   })
 
   const metaint = Number(res.headers.get("icy-metaint"))
-  if (!metaint) throw new Error("Stream does not support ICY metadata")
+  if (!metaint) throw new Error("Stream does not support Icy metadata")
 
   const reader = res.body!.getReader()
 
