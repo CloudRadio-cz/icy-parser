@@ -1,0 +1,25 @@
+{
+  "name": "@cloudradio/icy-parser",
+  "version": "1.0.0",
+  "author": "JustWolf (admin@justwolf.dev)",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloudradio-cz/icy-parser"
+  },
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.9.3"
+  },
+  "description": "Metadata parser for Icy compatible streams",
+  "license": "MIT",
+  "type": "module"
+}
