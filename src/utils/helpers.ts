@@ -33,6 +33,6 @@ export function concat(a: Uint8Array, b: Uint8Array): Uint8Array<ArrayBuffer> {
  */
 export function parseMetadata(raw: string): { title: string | undefined } {
   return {
-    title: /StreamTitle='([^']*)'/.exec(raw)?.[1]
+    title: /StreamTitle='(.*?)';/.exec(raw)?.[1]
   }
 }
